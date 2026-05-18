@@ -1,0 +1,18 @@
+name: sample-ci
+
+on:
+  push:
+
+jobs:
+  list-and-read:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: List repository files
+        run: ls -R
+
+      - name: Print README content
+        run: cat README.md
